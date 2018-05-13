@@ -24,3 +24,7 @@ Auth::routes();
 MyRoutes::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('user/{user}/article', 'UserArticleController@show')->name('article');
+
+Route::get('articles', 'ArticleController@index');

@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @property mixed articles
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -29,5 +32,9 @@ class User extends Authenticatable
 
     public function profile(){
         return $this->hasOne(Profile::class);
+    }
+
+    public function articles(){
+        return $this->hasMany(Article::class);
     }
 }
