@@ -11,6 +11,6 @@ class UserArticleController extends Controller
 
        $articles =  $user->articles;
 
-       return view('articles.show', compact('articles'));
+       return view('articles.show', compact('articles', 'user'));
     }
 }

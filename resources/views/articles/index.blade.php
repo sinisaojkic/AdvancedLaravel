@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">All Articles</div>
+                    <div class="card-header"><h3 style="color: saddlebrown">All Articles</h3></div>
 
                     <div class="card-body">
 
@@ -17,8 +17,15 @@
                                     </h4>
 
                                     <p>
-                                        by <a href="{{ route('article',['user' => $article->user->id]) }}">{{ $article->user->name }}</a>
+                                        by
+                                        <a href="{{ route('article',['user' => $article->user->id]) }}">{{ $article->user->name }}</a>
                                     </p>
+                                    <p>
+                                        @foreach($article->websites as $website)
+                                            <a href="{{ $website->url }}">{{ $website->url }}</a>
+                                        @endforeach
+                                    </p>
+                                    <br>
 
                                     <p class="list-group-item-text">
                                         {{ $article->body }}

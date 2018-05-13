@@ -27,4 +27,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('user/{user}/article', 'UserArticleController@show')->name('article');
 
-Route::get('articles', 'ArticleController@index');
+Route::get('articles', 'ArticleController@index')->name("articles");
+Route::get('websites', 'WebsiteController@index');
